@@ -24,6 +24,7 @@ const Button = ({onClick, text}) => {
   )
 }
 
+
 const App = () => {
   const [left, setLeft] = useState(0)
   const [right, setRight] = useState(0)
@@ -39,10 +40,17 @@ const App = () => {
     setRight(right + 1)
   }
 
+  const handleDropClick = () => {
+    setAll([])
+    setLeft(0)
+    setRight(0)
+  }
+
   return (
     <div>
       {left}
       <Button onClick={handleLeftClick} text={'Left'} />
+      <Button onClick={handleDropClick} text={'Reset'} />
       <Button onClick={handleRightClick} text={'Right'} />
       {right}
       <History allClicks={allClicks} />
