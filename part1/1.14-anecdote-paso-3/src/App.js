@@ -12,7 +12,7 @@ const Anecdotes = ({text, anecdotes, selected}) => {
 }
 const Votos = ({votesNow}) => <div><p>has {votesNow} votes</p></div>
 
-const MayorAnecdotes = ({maxVote, text}) => {
+const MayorAnecdotes = ({maxVote}) => {
   const max = Math.max(...maxVote)
   const positionAnecdote = maxVote.indexOf(max)
 
@@ -23,7 +23,6 @@ const MayorAnecdotes = ({maxVote, text}) => {
   }
     return (
       <>
-        <h1>{text}</h1>
         <Anecdotes text={'Anecdote with most votes'} anecdotes={anecdotes} selected={positionAnecdote} />
         <Votos votesNow={max} />
       </>
